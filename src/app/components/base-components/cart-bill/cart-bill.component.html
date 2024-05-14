@@ -1,1 +1,21 @@
-<p>cart-bill works!</p>
+<div class="border-2 /border-black shadow-lg rounded-lg w-60 p-2 flex flex-col gap-4">
+<div>
+    <h3 class="font-bold text-lg">{{'Order Summary' | uppercase}}</h3>
+</div>    
+<div>
+    SubTotal:
+</div>
+<div>
+    Tax (18%)
+</div>
+<div>
+    Discount:
+</div>
+<div class="flex flex-col gap-1">
+    <input placeholder="PROMO CODE" class="w-full bg-tertiary focus:ring-2 focus:ring-primary focus:bg-white rounded-lg p-1">
+    <button class="bg-primary w-full p-1 text-white rounded-lg flex flex-row items-center justify-center hover:bg-white hover:text-black">Apply Promo Code</button>
+</div>
+<div>
+    <button class="bg-primary text-white hover:bg-primary2 p-2 rounded-lg w-full flex justify-center items-center">{{'Checkout Now' | uppercase}}</button>
+</div>
+</div>
