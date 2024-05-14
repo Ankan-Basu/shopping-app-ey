@@ -1,2 +1,21 @@
-<p>products-page works!</p>
-<app-products-filter></app-products-filter>
+<div class="border-2 border-green-500 flex flex-row justify-between w-1000px m-auto">
+    <div>
+    <div class="sticky top-4">
+        <app-products-filter (categorySelected)="updateFilters($event)"></app-products-filter>
+    </div>
+</div>
+<div>
+    <h2>All Products</h2>
+    <div class="flex flex-col gap-5">
+<div *ngFor="let _ of [1,2,3,4,5]">
+   <app-product-list-item></app-product-list-item>
+</div>
+</div>
+</div>
+
+<div>
+    <!-- <div class="sticky top-4">
+<app-cart-bill></app-cart-bill>
+</div> -->
+</div>
+</div>

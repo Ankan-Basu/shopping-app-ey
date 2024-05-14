@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { IProductsFilter } from '../../../interfaces/iproducts-filter';
 
 @Component({
   selector: 'app-products-filter',
@@ -9,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './products-filter.component.css'
 })
 export class ProductsFilterComponent {
+  @Output() categorySelected = new EventEmitter<IProductsFilter>()
+
   categories: ICategories = {
     clothes: ['Men\'s Wear', 'Women\'s Wear', 'Kid\'s Wear'],
     furnitures: ['Dining Tables', 'Chairs', 'Cupboards'],
@@ -16,22 +19,64 @@ export class ProductsFilterComponent {
     books: ['Fiction', 'Biography', 'Thriller']
   }
 
-  selected = { 
+  selected = {
     clothes: false,
     furnitures: false,
-  electronics: false,
-  books: false
-};
+    electronics: false,
+    books: false
+  };
+
+  selected2: IProductsFilter = {
+    clothes: {
+      masterCategory: false,
+      'Men\'s Wear': false, 
+      'Women\'s Wear': false, 
+      'Kid\'s Wear': false
+    },
+    furnitures: {
+      masterCategory: false,
+      'Dining Tables': false, 
+      'Chairs': false, 
+      'Cupboards': false
+    },
+    electronics: {
+      masterCategory: false,
+      'Mobiles': false, 
+      'Tablets': false, 
+      'Laptops': false, 
+      'Smart Watches': false
+    },
+    books: {
+      masterCategory: false,
+      'Fiction': false, 
+      'Biography': false, 
+      'Thriller': false
+    },
+    price: [undefined, undefined]
+  }
 
   getCategories(): CategoryType[] {
     let keys: CategoryType[] = Object.keys(this.categories) as CategoryType[];
     return keys
   }
 
-  selectCategory(category: 'clothes'|'furnitures'|'electronics'|'books'): void {
+  selectCategory(category: CategoryType): void {
     console.log(`Selected ${category}`);
-    this.selected = {...this.selected, [category]: !this.selected[category]};
-    console.log(this.selected);
+    this.selected = { ...this.selected, [category]: !this.selected[category] };
+    // console.log(this.selected);
+
+    this.selected2[category].masterCategory = !this.selected2[category].masterCategory;
+
+    console.log(this.selected2);
+    // this.categorySelected.emit(category);
+  }
+  
+
+  selectSubCategory(category: CategoryType, subcategory: string) {
+    console.log('Category', category);
+    this.selected2[category][subcategory] = !this.selected2[category][subcategory]
+
+    console.log(this.selected2);
   }
 
   getSubCategoryOf(): CategoryType[] {
@@ -39,26 +84,62 @@ export class ProductsFilterComponent {
   }
 
   isCategorySelected(): boolean {
-    // let isSelected = false;
-    // for (let category in this.selected) {
-    //   if (this.selected[category as CategoryType]) {
-    //     isSelected = true;
-    //     break;
-    //   }
-    // }
-    // return isSelected;
     return Object.values(this.selected).some(value => value);
+  }
+
+  confirmFilter() {
+    this.categorySelected.emit(this.selected2)
   }
 }
 
 interface ICategories {
-    clothes: string[],
-    furnitures: string[],
-    electronics: string[],
-    books: string[]
+  clothes: string[],
+  furnitures: string[],
+  electronics: string[],
+  books: string[]
 }
 
-type CategoryType = 'clothes'|'furnitures'|'electronics'|'books';
+type CategoryType = 'clothes' | 'furnitures' | 'electronics' | 'books';
 
 const categories: CategoryType[] = ['clothes', 'furnitures', 'electronics', 'books'];
 
+// interface IProductsFilter {
+//   clothes: IClothSubCat,
+//   furnitures: IFurnituresSubCat,
+//   electronics: IElectronicsSubCat,
+//   books: IBooksSubCat,
+//   price: [number | undefined, number | undefined]
+// }
+
+// interface IClothSubCat {
+//   masterCategory: boolean,
+//   'Men\'s Wear': boolean, 
+//     'Women\'s Wear': boolean, 
+//     'Kid\'s Wear': boolean,
+//     [key: string]: boolean
+// }
+
+// interface IFurnituresSubCat {
+//   masterCategory: boolean,
+//     'Dining Tables': boolean, 
+//     'Chairs': boolean, 
+//     'Cupboards': boolean,
+//     [key: string]: boolean
+// }
+
+// interface IElectronicsSubCat {
+//   masterCategory: boolean,
+//   'Mobiles': boolean, 
+//   'Tablets': boolean, 
+//   'Laptops': boolean, 
+//   'Smart Watches': boolean,
+//   [key: string]: boolean
+// }
+
+// interface IBooksSubCat {
+//     masterCategory: boolean,
+//     'Fiction': boolean, 
+//     'Biography': boolean, 
+//     'Thriller': boolean,
+//     [key: string]: boolean
+//   }
