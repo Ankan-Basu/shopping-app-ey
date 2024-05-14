@@ -1,0 +1,25 @@
+<div class="/border-2 /border-black w-520px">
+    <div>Order ID:</div>
+    <div>Status:</div>
+    <div>Order Date:</div>
+    <div>Delivery Date:</div>
+    <div>Delivery Address</div>
+    <div>
+        Cost Breakdown
+        <div class="ml-6">
+        <div>Subtotal</div>
+        <div>Tax</div>
+        <div>Promo Code</div>
+        <div>Discount</div>
+        <div>Total</div>
+    </div>
+    </div>
+    <div>
+        Items
+        <div class="flex flex-col gap-4">
+        <div *ngFor="let _ of [1,2,3,4,5,6,7]">
+        <app-order-detail-item></app-order-detail-item>
+    </div>
+</div>
+    </div>
+</div>>
