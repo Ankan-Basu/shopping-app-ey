@@ -1,0 +1,53 @@
+<div class="/border-2 /border-black rounded-lg p-2 w-520px flex flex-row gap-4 shadow-xl">
+    <div class="w-28 /border-2 /border-green-500 flex flex-col justify-center">
+        <img src="assets/sample.webp" />
+    </div>
+    <div class="/border-2 w-full /border-red-500 flex flex-row gap-2 justify-between">
+        <div class="flex flex-col gap-2 /border-2 /border-black">
+        <div>
+            <h3 class="font-bold text-xl"> {{ 'POCO M6 Pro 5G (Power Black, 128 GB)' | slice: 0: 100 }}</h3>
+        </div>
+        <div>
+            <div>
+                <div>Size <app-dropdown></app-dropdown></div>
+                <div>color <app-dropdown></app-dropdown></div>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg">{{9999 | currency: 'INR'}}</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="/border-2 /border-blue-400 flex flex-col gap-2 justify-center items-center">
+        <div class="flex flex-row items-center">
+            <button class="p-1 rounded-lg bg-primary text-white font-bold">
+                <!-- minus -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                  </svg>                  
+            </button>
+            <input class="text-sm bg-tertiary w-10 py-1 focus:ring-2 focus:ring-primary /focus:border-2 f/ocus:border-primary focus:bg-white outline-none rounded-lg"/>
+            <button class="p-1 rounded-lg bg-primary text-white">
+                <!-- plus -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>               
+            </button>
+        </div>
+        <div>
+            <button class="py-1 px-2 rounded-lg text-white bg-red-400 hover:bg-red-600 flex flex-row justify-center items-center g-1 text-sm">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                      </svg>                      
+                </span>
+                <span>Remove</span>
+            </button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- <div class="ml-96">
+    <app-dropdown></app-dropdown>
+</div> -->

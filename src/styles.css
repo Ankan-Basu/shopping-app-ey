@@ -10,3 +10,7 @@ div {
 button {
     transition: background 0.75s ease;
 }
+
+input {
+    transition: background 0.75s ease;
+}
