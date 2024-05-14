@@ -14,3 +14,20 @@ button {
 input {
     transition: background 0.75s ease;
 }
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Style the custom checkbox */
+input[type="checkbox"]:checked {
+    background-color: #7469B6; /* Change the color when checked */
+}

@@ -4,12 +4,13 @@ import { OrdersPageComponent } from './components/pages/orders-page/orders-page.
 import { OrderDetailsComponent } from './components/base-components/order-details/order-details.component';
 import { OrderDetailsPageComponent } from './components/pages/order-details-page/order-details-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { ProductsPageComponent } from './components/pages/products-page/products-page.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: ProfilePageComponent,
-        title: 'Profile'
+        component: ProductsPageComponent,
+        title: 'Products'
     },
     {
         path: 'profile',
