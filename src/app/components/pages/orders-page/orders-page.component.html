@@ -1,0 +1,20 @@
+<p>orders-page works!</p>
+<p>cart-page works!</p>
+
+<div class="border-2 border-green-500 flex flex-row justify-between w-1000px m-auto">
+   <div>
+    <div class="sticky top-4">
+        <app-sidebar-user></app-sidebar-user>
+    </div>
+</div>
+    <div>
+        <div *ngFor="let _ of [1,2,3,4,5,6,7]">
+        <app-orders-item></app-orders-item>
+        </div>
+    </div>
+    <div>
+        <div class="sticky top-4">
+            <app-orders-filter></app-orders-filter>
+        </div>
+    </div>
+</div>
