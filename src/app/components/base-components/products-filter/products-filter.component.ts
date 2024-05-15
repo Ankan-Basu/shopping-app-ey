@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
-import { IProductsFilter } from '../../../interfaces/iproducts-filter';
+import { CategoryType, IProductsFilter } from '../../../interfaces/iproducts-filter';
 
 @Component({
   selector: 'app-products-filter',
@@ -99,7 +99,7 @@ interface ICategories {
   books: string[]
 }
 
-type CategoryType = 'clothes' | 'furnitures' | 'electronics' | 'books';
+// type CategoryType = 'clothes' | 'furnitures' | 'electronics' | 'books';
 
 const categories: CategoryType[] = ['clothes', 'furnitures', 'electronics', 'books'];
 

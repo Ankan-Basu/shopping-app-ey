@@ -5,7 +5,7 @@
     </div>
 </div>
 <div>
-    <h2>All Products</h2>
+    <h2 class="text-3xl font-bold">{{headingText | titlecase}}</h2>
     <div class="flex flex-col gap-5">
 <div *ngFor="let _ of [1,2,3,4,5]">
    <app-product-list-item></app-product-list-item>

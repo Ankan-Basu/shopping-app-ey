@@ -42,3 +42,5 @@ export interface IProductsFilter {
       'Thriller': boolean,
       [key: string]: boolean
     }
+
+    export type CategoryType = 'clothes' | 'furnitures' | 'electronics' | 'books';
