@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { interval, Subscription } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-carousel',
@@ -9,7 +12,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
-export class CarouselComponent implements OnInit, OnDestroy, AfterContentInit {
+export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   slides: ICarouselItem[] = [
     {imgSrc: 'assets/2.jpeg', imgAlt: 'img1'}, 
     {imgSrc: 'assets/1.jpeg', imgAlt: 'img2'}, 
@@ -23,20 +26,24 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterContentInit {
   interval: NodeJS.Timeout | null = null;
 
   ngOnInit(): void {
+    console.log('NgOnINIT')
+    // this.autoSlideScroll();
   }
   ngAfterContentInit(): void {
-    this.autoSlideScroll();
+  }
+  ngAfterViewInit(): void {
+    // this.autoSlideScroll();
   }
 
   ngOnDestroy(): void {
     console.log('NgOnDestroy');
-    this.clearAutoSlideScroll();
+    // this.clearAutoSlideScroll();
   }
 
   autoSlideScroll(): void {
-    // this.interval = 
-    setInterval(() => {
-      this.selectImage(this.selectedIndex+1); // keep on selecting next
+    this.interval = setInterval(() => {
+        this.selectImage(this.selectedIndex+1); // keep on selecting next
+      // console.log('Hello')
     }, 5000)  
   }
 
@@ -46,11 +53,40 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterContentInit {
     }
   }
 
+  startAutoScroll() {
+    this.autoSlideScroll();
+  }
+
+  // intervalSubscription: Subscription | undefined;
+
+  // ngOnInit(): void {
+  //   console.log('NgOnInit');
+  //   this.startAutoSlideScroll();
+  // }
+
+  // ngOnDestroy(): void {
+  //   console.log('NgOnDestroy');
+  //   this.stopAutoSlideScroll();
+  // }
+
+  // startAutoSlideScroll(): void {
+  //   this.intervalSubscription = interval(this.slideInterval)
+  //     .pipe(takeWhile(() => true)) // Keep emitting values indefinitely
+  //     .subscribe(() => {
+  //       this.nextClick();
+  //     });
+  // }
+
+  // stopAutoSlideScroll(): void {
+  //   if (this.intervalSubscription) {
+  //     this.intervalSubscription.unsubscribe();
+  //   }
+  // }
   nextClick() {
     if(this.selectedIndex >= this.slides.length) {
       this.selectedIndex = 0;
     } else {
-      this.selectedIndex--;
+      this.selectedIndex++;
     }
   }
   selectImage(indx: number): void {
