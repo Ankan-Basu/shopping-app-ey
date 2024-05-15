@@ -5,10 +5,16 @@ import { OrderDetailsComponent } from './components/base-components/order-detail
 import { OrderDetailsPageComponent } from './components/pages/order-details-page/order-details-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { ProductsPageComponent } from './components/pages/products-page/products-page.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ProductDetailsPageComponent } from './components/pages/product-details-page/product-details-page.component';
 
 export const routes: Routes = [
     {
         path: '',
+        component: HomePageComponent
+    },
+    {
+        path: 'products',
         component: ProductsPageComponent,
         title: 'Products'
     },
@@ -31,5 +37,10 @@ export const routes: Routes = [
         path: 'orders',
         component: OrdersPageComponent,
         title: 'Orders'
+    },
+    {
+        path: 'product/:id',
+        component: ProductDetailsPageComponent,
+        title: ''
     }
 ];
