@@ -4,11 +4,12 @@ import { NavbarComponent } from './components/base-components/navbar/navbar.comp
 import { ProductListItemComponent } from './components/base-components/product-list-item/product-list-item.component';
 import { CommonModule } from '@angular/common';
 import { ProductDetailsPageComponent } from './components/pages/product-details-page/product-details-page.component';
+import { FooterComponent } from './components/base-components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, ProductListItemComponent, CommonModule, ProductDetailsPageComponent],
+  imports: [RouterOutlet, NavbarComponent, ProductListItemComponent, CommonModule, ProductDetailsPageComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
