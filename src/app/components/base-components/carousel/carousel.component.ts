@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+// import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { interval, Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
@@ -8,7 +8,7 @@ import { takeWhile } from 'rxjs/operators';
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [SlickCarouselModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
@@ -16,7 +16,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   slides: ICarouselItem[] = [
     {imgSrc: 'assets/2.jpeg', imgAlt: 'img1'}, 
     {imgSrc: 'assets/1.jpeg', imgAlt: 'img2'}, 
-    {imgSrc: 'assets/2.jpeg', imgAlt: 'img2'}
+    {imgSrc: 'assets/mr-fresh.png', imgAlt: 'img2'}
   ];
 
   selectedIndex = 0;
@@ -44,7 +44,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     this.interval = setInterval(() => {
         this.selectImage(this.selectedIndex+1); // keep on selecting next
       // console.log('Hello')
-    }, 5000)  
+    }, 3000)  
   }
 
   clearAutoSlideScroll(): void {

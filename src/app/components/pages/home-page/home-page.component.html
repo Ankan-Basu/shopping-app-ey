@@ -1,2 +1,28 @@
-<p>home-page works!</p>
-<app-carousel></app-carousel>
+<div class="w-full xl:w-1280px m-auto border-2">
+
+    <app-carousel></app-carousel>
+    
+    <div class="p-2">
+        <h2 class="text-2xl font-bold">Browse Categories</h2>
+        <div class="border-2 border-black flex /flex-wrap /relative">
+            <div class="w-1/4">
+                <app-category-img [imgUrl]="'assets/category-img/clothes.png'" [catName]="'Clothes'">
+                </app-category-img>
+            </div>
+            <div class="w-1/4">
+                <app-category-img [imgUrl]="'assets/category-img/furniture.png'" [catName]="'Furnitures'">
+                </app-category-img>
+            </div>
+            <div class="w-1/4">
+                <app-category-img [imgUrl]="'assets/category-img/electronics.png'" [catName]="'Electronics'">
+                </app-category-img>
+            </div>
+            <div class="w-1/4">
+                <app-category-img [imgUrl]="'assets/category-img/books.png'" [catName]="'Books'">
+                </app-category-img>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
