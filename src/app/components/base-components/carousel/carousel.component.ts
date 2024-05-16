@@ -44,7 +44,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     this.interval = setInterval(() => {
         this.selectImage(this.selectedIndex+1); // keep on selecting next
       // console.log('Hello')
-    }, 3000)  
+    }, 2000)  
   }
 
   clearAutoSlideScroll(): void {
@@ -54,6 +54,10 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   startAutoScroll() {
+    this.autoSlideScroll();
+  }
+
+  stopAutoScroll() {
     this.autoSlideScroll();
   }
 
