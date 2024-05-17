@@ -1,9 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-// import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { interval, Subscription } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-carousel',
@@ -61,31 +57,6 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     this.autoSlideScroll();
   }
 
-  // intervalSubscription: Subscription | undefined;
-
-  // ngOnInit(): void {
-  //   console.log('NgOnInit');
-  //   this.startAutoSlideScroll();
-  // }
-
-  // ngOnDestroy(): void {
-  //   console.log('NgOnDestroy');
-  //   this.stopAutoSlideScroll();
-  // }
-
-  // startAutoSlideScroll(): void {
-  //   this.intervalSubscription = interval(this.slideInterval)
-  //     .pipe(takeWhile(() => true)) // Keep emitting values indefinitely
-  //     .subscribe(() => {
-  //       this.nextClick();
-  //     });
-  // }
-
-  // stopAutoSlideScroll(): void {
-  //   if (this.intervalSubscription) {
-  //     this.intervalSubscription.unsubscribe();
-  //   }
-  // }
   nextClick() {
     if(this.selectedIndex >= this.slides.length) {
       this.selectedIndex = 0;
