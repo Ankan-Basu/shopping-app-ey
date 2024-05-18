@@ -14,6 +14,8 @@ export class AdminUsersDetailsPageComponent {
   showOrdersList = false;
   showReviewsList = false;
 
+  banned = true;
+
   toggleOrdersListDisplay() {
     this.showOrdersList = !this.showOrdersList;
   }

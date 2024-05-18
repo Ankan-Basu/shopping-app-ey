@@ -1,6 +1,17 @@
 <div class="w-520px">
-    <h3>User Orders:</h3>
-    <div *ngFor="let _ of [1,2,3,4,5,6,7,8,9,10]">
-        <app-admin-users-item></app-admin-users-item>
+    <h2 class="text-4xl font-semibold mb-4">{{'Users List: ' | uppercase}}</h2>
+
+
+            <div class="relative w-full flex flex-row mb-4">
+                <input class="p-1 rounded-md outline-none focus:ring-2 focus:ring-primary focus:bg-white bg-tertiary flex-1 pr-4" placeholder="User Id or Name">
+                
+                <button class="absolute right-0 bg-primary hover:bg-primary2 text-white font-semibold p-1 rounded-md /rounded-s-none">Search User</button>
+            </div>
+    
+
+    <div class="flex flex-col gap-1">
+        <div *ngFor="let _ of [1,2,3,4,5,6,7,8,9,10,10,1,1,1,1,1,1,1,1,1,1,1]">
+            <app-admin-users-item></app-admin-users-item>
+        </div>
     </div>
 </div>

@@ -1,16 +1,43 @@
 <div class="w-520px">
 
-    <div class="p-2 flex flex-col">
-        <div>Account details of</div>
-        <h2 class="text-3xl font-bold">
-             Mr. Fresh!
-        </h2>
+    <div class="flex flex-row justify-between">
+        <div class="p-2 flex flex-col mb-4">
+            <div class="text-xl">Account details of</div>
+            <h2 class="text-4xl font-semibold">
+                Mr. Fresh!
+            </h2>
+            
+        </div>
+        <div class="mt-6">
+
+            <button class="p-1 rounded-md bg-red-400 hover:bg-red-500 text-white font-semibold w-24 flex flex-row justify-center items-center gap-1" *ngIf="!banned">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>                
+                </span>
+                <span>
+                    Ban
+                </span>
+            </button>
+
+            <button class="p-1 rounded-md bg-primary hover:bg-primary2 text-white font-semibold w-24 flex flex-row justify-center items-center gap-1" *ngIf="banned">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                          
+                </span>
+                <span>
+                    Unban
+                </span>
+            </button>
+
+
+        </div>
     </div>
 
     <div class="p-2 flex flex-col gap-6">
-
-        <!-- <div class="mb-8">Welcome to . Your account details:</div> -->
-        
         <div class="flex flex-row items-center gap-1">
             <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -104,3 +131,4 @@
         </div>
     </div>
 </div>
+
