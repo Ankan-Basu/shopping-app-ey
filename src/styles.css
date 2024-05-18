@@ -3,6 +3,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+* {
+  font-family: "Urbanist", sans-serif;
+  /* font-optical-sizing: auto; */
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* * {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+  
 div {
     transition: background 0.75s ease;
 }
