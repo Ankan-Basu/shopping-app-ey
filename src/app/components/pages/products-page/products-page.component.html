@@ -1,16 +1,16 @@
-<div class="border-2 border-green-500 flex flex-row justify-between w-full xl:w-1280px m-auto">
+<div class="flex flex-row justify-between w-full xl:w-1280px m-auto">
     <div>
     <div class="sticky top-14">
         <app-products-filter (categorySelected)="updateFilters($event)"></app-products-filter>
     </div>
 </div>
-<div class="w-520px">
-    <h2 class="text-3xl font-bold">{{headingText | titlecase}}</h2>
-    <div class="flex flex-col gap-5">
-<div *ngFor="let _ of [1,2,3,4,5]">
-   <app-product-list-item></app-product-list-item>
-</div>
-</div>
+<div class="w-520px mt-4">
+    <h2 class="text-4xl font-semibold mb-4">{{headingText | uppercase}}</h2>
+    <div class="flex flex-col gap-1">
+        <div *ngFor="let _ of [1,2,3,4,5]">
+            <app-product-list-item></app-product-list-item>
+        </div>
+    </div>
 </div>
 
 <div>

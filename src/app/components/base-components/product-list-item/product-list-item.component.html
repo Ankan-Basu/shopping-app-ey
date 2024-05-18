@@ -1,11 +1,11 @@
-<div class="border-2 border-primary w-600px flex flex-row gap-2 p-2 rounded-lg hover:bg-secondary2">
-    <div class="borde/r-2 bor/der-red-400 w-32 h-32">
+<div class="border-2  w-600px flex flex-row gap-2 p-2 rounded-md ">
+    <div class="w-32 h-32">
         <img src="assets/sample.webp" class="w-32 h-32"/>
     </div>
-    <div class="flex flex-row items-center justify-between /border-2 w-full /border-red-400">
-        <div class="w-3/4 /border-2 /border-pink-200 flex flex-col gap-2">
+    <div class="flex flex-row items-center justify-between w-full">
+        <div class="w-3/4 flex flex-col gap-2">
         <div [routerLink]="'/product/1'"> <!-- change to id -->
-            <h3 class="font-bold text-xl"> {{ 'POCO M6 Pro 5G (Power Black, 128 GB)' | slice: 0: 100 }}</h3>
+            <h3 class="font-semibold text-xl"> {{ 'POCO M6 Pro 5G (Power Black, 128 GB)' | slice: 0: 100 | uppercase}}</h3>
         </div>
         <div class="flex flex-row gap-1">
             Rating
@@ -16,11 +16,11 @@
                 </span>
         </div>
         <div>
-            <span class="font-bold text-lg">{{9999 | currency: 'INR'}}</span>
+            <span class="font-semibold text-lg">{{9999 | currency: 'INR'}}</span>
         </div>
     </div>
-        <div class="/border-2 /border-green-300">
-            <button class="bg-primary hover:bg-primary2 px-3 py-2 rounded-xl text-white">Add to Cart</button>
+        <div class="">
+            <button class="font-semibold bg-primary hover:bg-primary2 px-3 py-2 rounded-md text-white">Add to Cart</button>
         </div>
     </div>
 
