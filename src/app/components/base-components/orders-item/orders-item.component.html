@@ -5,9 +5,12 @@
 
     <div class="/border-2 w-full /border-red-500 flex flex-row gap-2 justify-between">
         <div class="flex flex-col gap-2 border-2 /border-black">
-        <div>
+        <div class="cursor-pointer" [routerLink]="'/orders/1'"> <!-- change to oId -->
             <h3 class="font-bold text-xl"> {{ 'OrderId: 98huu989u6ykhjii' | slice: 0: 100 }}</h3>
-        </div>        
+        </div>    
+        <div class="text-sm -mt-2 cursor-pointer" [routerLink]="'/user/mr.fresh'"> <!-- change to uid -->
+            Mr. Fresh
+        </div>    
         <div>
             <div>
                 Date: ...
