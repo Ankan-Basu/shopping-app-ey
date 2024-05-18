@@ -11,5 +11,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cart-item.component.css'
 })
 export class CartItemComponent {
+  quantity = 10;
+  oldQuantity = this.quantity;
+  qnChanged = false;
 
+  coloursArray = ['Red', 'Green', 'Black', 'Blue'];
+  sizesArray = ['XS', 'S', 'M', 'L', 'XL'];
+  
+  changeQuantity() {
+    this.qnChanged = true;
+  }
 }

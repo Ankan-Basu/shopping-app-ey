@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -9,11 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './dropdown.component.css'
 })
 export class DropdownComponent {
+  @Input() menuName = 'Options';
+  @Input() options: string[] = [];
+
   menuOpen = false;
 
-  menuName = 'Option';
+  // menuName = 'Option';
 
-  options = ['About', 'Settings', 'Home', 'Login'];
+  // options = ['About', 'Settings', 'Home', 'Login'];
 
   optionSelected = '';
 

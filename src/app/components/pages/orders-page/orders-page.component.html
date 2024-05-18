@@ -1,10 +1,11 @@
-<div class="border-2 border-green-500 flex flex-row justify-between w-full xl:w-1280px m-auto">
+<div class="flex flex-row justify-between w-full xl:w-1280px m-auto">
    <div>
     <div class="sticky top-14">
         <app-sidebar-user></app-sidebar-user>
     </div>
 </div>
-    <div class="w-520px">
+    <div class="flex flex-col gap-1 w-520px mt-4">
+        <h2 class="text-4xl font-semibold mb-4">{{'My Orders: ' | uppercase}}</h2>
         <div *ngFor="let _ of [1,2,3,4,5,6,7]">
         <app-orders-item></app-orders-item>
         </div>
