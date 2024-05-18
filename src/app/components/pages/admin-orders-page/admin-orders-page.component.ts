@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OrdersItemComponent } from '../../base-components/orders-item/orders-item.component';
 
 @Component({
@@ -10,5 +10,5 @@ import { OrdersItemComponent } from '../../base-components/orders-item/orders-it
   styleUrl: './admin-orders-page.component.css'
 })
 export class AdminOrdersPageComponent {
-
+  @Input() openedAsSubMenu = false;
 }

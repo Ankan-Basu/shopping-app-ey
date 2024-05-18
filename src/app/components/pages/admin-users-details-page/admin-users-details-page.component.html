@@ -1,7 +1,8 @@
-<div class="w-520px border-2">
+<div class="w-520px">
 
-    <div class="p-2 mb-12">
-        <h2 class="text-5xl font-bold">
+    <div class="p-2 flex flex-col">
+        <div>Account details of</div>
+        <h2 class="text-3xl font-bold">
              Mr. Fresh!
         </h2>
     </div>
@@ -51,8 +52,55 @@
                 Wallet Balance: {{'balance | currency: \'INR\''}}
             </span>
         </div>
+        
     </div>
 
+    <div>
 
+        <div class="border-2 rounded-md p-2 flex flex-row justify-between cursor-pointer mt-2" (click)="toggleOrdersListDisplay()">
+            <span class="text-lg font-medium">
+            View Orders
+        </span>
+        <span *ngIf="!showOrdersList">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+        </span>
+        <span *ngIf="showOrdersList">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>              
+        </span>
+    </div>
 
+    <div *ngIf="showOrdersList" class="/border-2 /p-2">
+        <div>
+            <app-admin-orders-page [openedAsSubMenu]="true"></app-admin-orders-page>
+        </div>
+    </div>
+
+</div>
+
+    <div>
+
+        <div class="border-2 rounded-md p-2 flex flex-row justify-between cursor-pointer mt-2" (click)="toggleReviewsListDisplay()">
+            <span class="text-lg font-medium">
+                View Reviews
+            </span>
+            <span *ngIf="!showReviewsList">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </span>
+            <span *ngIf="showReviewsList">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                </svg>              
+            </span>
+        </div>
+      
+        <div *ngIf="showReviewsList" class="/border-2 /p-2">
+            <app-admin-reviews-page [openedAsSubMenu]="true"></app-admin-reviews-page>
+        </div>
+    </div>
 </div>

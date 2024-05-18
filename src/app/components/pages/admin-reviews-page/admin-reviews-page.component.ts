@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SidebarAdminComponent } from '../../base-components/sidebar-admin/sidebar-admin.component';
 import { CommonModule } from '@angular/common';
 import { AdminReviewItemComponent } from '../../base-components/admin-review-item/admin-review-item.component';
@@ -12,5 +12,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './admin-reviews-page.component.css'
 })
 export class AdminReviewsPageComponent {
-
+  @Input() openedAsSubMenu = false;
 }
